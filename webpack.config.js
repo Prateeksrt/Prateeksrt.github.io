@@ -9,10 +9,13 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
+                resolve: {
+                    extensions: [".js", ".jsx"]
+                },
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
-                }
+                },
             },
             {
                 test: /\.html$/,
@@ -21,10 +24,16 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
+                test: /\.(css|scss)$/,
                 use: [
                     "style-loader",
                     "css-loader",
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            implementation: require('sass'),
+                        }
+                    }
                 ]
             }
         ]

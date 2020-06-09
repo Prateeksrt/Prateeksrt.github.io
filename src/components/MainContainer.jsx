@@ -1,13 +1,9 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
-import './MainComponent.css';
+import './MainComponent.scss';
 
 const MainContainer = () => (
-    <Paper
-        className="app"
-        elevation={3}
-        variant="outlined"
-    />
+    <div className="app"></div>
 )
 
 export default MainContainer;
