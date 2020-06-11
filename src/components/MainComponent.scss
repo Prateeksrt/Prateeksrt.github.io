@@ -1,7 +1,9 @@
-@use "../common/color" as c;
+@use "../common/main" as theme;
 
 .app {
     height: 80%;
     width:80%;
-    background-color: c.$color-gray-700;
+    background-color: theme.$background-color;
+    border-radius: theme.$border-radius-large;
+    box-shadow: 3px 3px 10px theme.$background-shadow-color;
 }
