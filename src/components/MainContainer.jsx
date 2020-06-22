@@ -4,7 +4,6 @@ import './Common.scss';
 import { ContentArea } from './ContentArea';
 import { ProfileArea } from './ProfileArea';
 import Grid from '@material-ui/core/Grid';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 
 const styles = theme => makeStyles({
@@ -15,22 +14,33 @@ const styles = theme => makeStyles({
             height: '100%',
         },
     },
+    profileContainer: {
+        [theme.breakpoints.down('sm')]: {
+            height: '30%',
+        },
+        height: '100%',
+    },
+    contentContainer: {
+        [theme.breakpoints.down('sm')]: {
+            height: '70%',
+        },
+        height: '100%',
+    },
+    app: {
+        backgroundColor: theme.palette.background.default,
+        boxShadow: `3px 3px 10px ${theme.palette.background.default}`
+    }
 });
 
 export const MainContainer = () => {
-    const theme = useTheme();
-    console.log(theme);
-    const classes = styles(theme)();
-    const biggerThanSm = useMediaQuery(theme.breakpoints.up('md'));
-    const profileHight = biggerThanSm ? 'profile-height-sm-up' : 'profile-height-sm-down';
-    const contentHight = biggerThanSm ? 'content-height-sm-up' : 'content-height-sm-down';
+    const classes = styles(useTheme())();
     return (
         <Grid container className={classes.appBody} justify="center">
-            <Grid container item md={11} lg={10} className="app" direction={'row'} >
-                <Grid item md={3} sm={12} className={profileHight}>
+            <Grid container item md={11} lg={10} className={classes.app} direction={'row'} >
+                <Grid item md={3} sm={12} className={classes.profileContainer}>
                     <ProfileArea />
                 </Grid>
-                <Grid item md={9} sm={12} className={contentHight}>
+                <Grid item md={9} sm={12} className={classes.contentContainer}>
                     <ContentArea />
                 </Grid>
             </Grid>
