@@ -9,14 +9,6 @@
     }
 }
 
-.app-body {
-    height:80%;
-    max-width:100%;
-    @media (max-width: theme.$small) {
-        height: 100%;
-    }
-}
-
 .profile-height-sm-up {
     height:100%;
 }
