@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -10,26 +11,26 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 resolve: {
-                    extensions: [".js", ".jsx"]
+                    extensions: ['.js', '.jsx']
                 },
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
+                    loader: 'babel-loader'
                 },
             },
             {
                 test: /\.html$/,
                 use: {
-                    loader: "html-loader"
+                    loader: 'html-loader'
                 }
             },
             {
                 test: /\.(css|scss)$/,
                 use: [
-                    "style-loader",
-                    "css-loader",
+                    'style-loader',
+                    'css-loader',
                     {
-                        loader: "sass-loader",
+                        loader: 'sass-loader',
                         options: {
                             implementation: require('sass'),
                         }
@@ -40,8 +41,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/index.html",
-            filename: "./index.html"
+            template: './src/index.html',
+            filename: './index.html'
         })
     ]
 };

@@ -1,0 +1,5 @@
+@use "../common/main" as theme;
+
+@mixin rounded {
+    border-radius: theme.$border-radius-large;
+}

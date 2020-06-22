@@ -1,0 +1,7 @@
+@use "../common/main" as theme;
+@use "common" as common;
+
+.content-area-container {
+    background-color: theme.$background-color-darker;
+    height:100%;
+}
