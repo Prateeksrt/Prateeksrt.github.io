@@ -1,7 +1,15 @@
 import React from 'react';
-import './Common.scss';
-import './ProfileArea.scss';
+import { makeStyles } from '@material-ui/core';
 
-export const ProfileArea = () => (
-    <div className="profile-area-container"></div>
-);
+const styles = makeStyles({
+    profileAreaContainer: {
+        height: '100%',
+    }
+});
+
+export const ProfileArea = () => {
+    const classes = styles();
+    return (
+        <div className={classes.profileAreaContainer}></div>
+    );
+};

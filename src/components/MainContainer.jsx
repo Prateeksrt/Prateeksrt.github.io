@@ -4,8 +4,6 @@ import { ProfileArea } from './ProfileArea';
 import Grid from '@material-ui/core/Grid';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 
-const tillTablet = theme => theme.breakpoints.dowm('');
-
 const styles = theme => makeStyles({
     appBody: {
         height: '100%',
