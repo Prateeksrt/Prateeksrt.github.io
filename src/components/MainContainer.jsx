@@ -25,8 +25,8 @@ const styles = theme => makeStyles({
         },
     },
     app: {
-        backgroundColor: theme.palette.background.default,
-        boxShadow: `3px 3px 10px ${theme.palette.background.default}`,
+        backgroundColor: theme.palette.background.paper,
+        boxShadow: `3px 3px 5px ${theme.palette.divider}`,
         [theme.breakpoints.up('md')]: {
             borderRadius: `${theme.spacing(3)}px`,
         }
