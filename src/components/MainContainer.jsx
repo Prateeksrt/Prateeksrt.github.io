@@ -1,6 +1,4 @@
 import React from 'react';
-import './MainContainer.scss';
-import './Common.scss';
 import { ContentArea } from './ContentArea';
 import { ProfileArea } from './ProfileArea';
 import Grid from '@material-ui/core/Grid';
@@ -28,12 +26,16 @@ const styles = theme => makeStyles({
     },
     app: {
         backgroundColor: theme.palette.background.default,
-        boxShadow: `3px 3px 10px ${theme.palette.background.default}`
+        boxShadow: `3px 3px 10px ${theme.palette.background.default}`,
+        [theme.breakpoints.up('sm')]: {
+            borderRadius: `${theme.spacing(3)}px`,
+        }
     }
 });
 
 export const MainContainer = () => {
-    const classes = styles(useTheme())();
+    const theme = useTheme();
+    const classes = styles(theme)();
     return (
         <Grid container className={classes.appBody} justify="center">
             <Grid container item md={11} lg={10} className={classes.app} direction={'row'} >
