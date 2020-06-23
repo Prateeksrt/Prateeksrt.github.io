@@ -4,30 +4,32 @@ import { ProfileArea } from './ProfileArea';
 import Grid from '@material-ui/core/Grid';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 
+const tillTablet = theme => theme.breakpoints.dowm('');
+
 const styles = theme => makeStyles({
     appBody: {
-        height: '80%',
+        height: '100%',
         maxWidth: '100%',
-        [theme.breakpoints.down('sm')]: {
-            height: '100%',
+        [theme.breakpoints.up('md')]: {
+            height: '80%',
         },
     },
     profileContainer: {
-        [theme.breakpoints.down('sm')]: {
-            height: '30%',
+        height: '30%',
+        [theme.breakpoints.up('md')]: {
+            height: '100%',
         },
-        height: '100%',
     },
     contentContainer: {
-        [theme.breakpoints.down('sm')]: {
-            height: '70%',
+        height: '70%',
+        [theme.breakpoints.up('md')]: {
+            height: '100%',
         },
-        height: '100%',
     },
     app: {
         backgroundColor: theme.palette.background.default,
         boxShadow: `3px 3px 10px ${theme.palette.background.default}`,
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('md')]: {
             borderRadius: `${theme.spacing(3)}px`,
         }
     }
@@ -38,11 +40,11 @@ export const MainContainer = () => {
     const classes = styles(theme)();
     return (
         <Grid container className={classes.appBody} justify="center">
-            <Grid container item md={11} lg={10} className={classes.app} direction={'row'} >
-                <Grid item md={3} sm={12} className={classes.profileContainer}>
+            <Grid container item xs={12} md={11} lg={10} className={classes.app} direction={'row'} >
+                <Grid item xs={12} md={3} className={classes.profileContainer}>
                     <ProfileArea />
                 </Grid>
-                <Grid item md={9} sm={12} className={classes.contentContainer}>
+                <Grid item xs={12} md={9} className={classes.contentContainer}>
                     <ContentArea />
                 </Grid>
             </Grid>
