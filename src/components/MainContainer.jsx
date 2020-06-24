@@ -5,11 +5,6 @@ import Grid from '@material-ui/core/Grid';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 
 const styles = theme => makeStyles({
-    appBody: {
-        height: '100%',
-        width: '100%',
-        background: `linear-gradient(135deg,  ${theme.palette.info.light}, ${theme.palette.success.light} 50%, ${theme.palette.success.main})`,
-    },
     profileContainer: {
         height: '30%',
         [theme.breakpoints.up('md')]: {
@@ -33,18 +28,17 @@ const styles = theme => makeStyles({
     }
 });
 
-export const MainContainer = () => {
+// eslint-disable-next-line react/prop-types
+export const MainContainer = ({ onThemeChange }) => {
     const theme = useTheme();
     const classes = styles(theme)();
     return (
-        <Grid container className={classes.appBody} justify="center" alignItems="center">
-            <Grid container item xs={12} md={11} lg={10} className={classes.app} direction={'row'} >
-                <Grid item xs={12} md={3} className={classes.profileContainer}>
-                    <ProfileArea />
-                </Grid>
-                <Grid item xs={12} md={9} className={classes.contentContainer}>
-                    <ContentArea />
-                </Grid>
+        <Grid container item xs={12} md={11} lg={10} className={classes.app} direction={'row'} >
+            <Grid item xs={12} md={3} className={classes.profileContainer}>
+                <ProfileArea />
+            </Grid>
+            <Grid item xs={12} md={9} className={classes.contentContainer}>
+                <ContentArea onThemeChange={onThemeChange}/>
             </Grid>
         </Grid>
     );
