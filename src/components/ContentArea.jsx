@@ -5,7 +5,7 @@ const styles = theme => makeStyles({
     contentAreaContainer: {
         height: '100%',
         backgroundColor: theme.palette.background.default,
-        borderLeft: `1px solid ${theme.palette.divider}`,
+        border: `1px solid ${theme.palette.divider}`,
         [theme.breakpoints.up('md')]: {
             borderRadius: theme.spacing(3),
         },
