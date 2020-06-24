@@ -23,19 +23,6 @@ module.exports = {
                 use: {
                     loader: 'html-loader'
                 }
-            },
-            {
-                test: /\.(css|scss)$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            implementation: require('sass'),
-                        }
-                    }
-                ]
             }
         ]
     },
