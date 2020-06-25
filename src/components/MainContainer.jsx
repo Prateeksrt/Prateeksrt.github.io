@@ -30,7 +30,7 @@ const styles = theme => makeStyles({
         height: '100%',
         [theme.breakpoints.up('md')]: {
             borderRadius: `${theme.spacing(3)}px`,
-            height: '80%',
+            height: '90%',
         }
     }
 });
@@ -39,7 +39,7 @@ export const MainContainer = ({ onThemeChange }) => {
     const theme = useTheme();
     const classes = styles(theme)();
     return (
-        <Grid container item xs={12} md={11} lg={10} className={classes.app} direction={'row'} >
+        <Grid container item xs={12} md={10} lg={9} xl={8} className={classes.app} direction={'row'} >
             <Grid item xs={12} md={3} className={classes.profileContainer}>
                 <ProfileArea />
             </Grid>
