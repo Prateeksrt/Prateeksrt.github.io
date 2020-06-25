@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles, useTheme, Switch } from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 const styles = theme => makeStyles({
     contentAreaContainer: {
@@ -12,7 +13,6 @@ const styles = theme => makeStyles({
     }
 });
 
-// eslint-disable-next-line react/prop-types
 export const ContentArea = ({ onThemeChange }) => {
     const [checked, setChecked] = useState(false);
     const classes = styles(useTheme())();
@@ -25,4 +25,8 @@ export const ContentArea = ({ onThemeChange }) => {
             <Switch checked={checked} onChange={handleChange} color="primary"/>
         </div>
     );
+};
+
+ContentArea.propTypes = {
+    onThemeChange: PropTypes.func
 };

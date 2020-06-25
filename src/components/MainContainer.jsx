@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Grid from '@material-ui/core/Grid';
 import { ContentArea } from './ContentArea';
 import { ProfileArea } from './ProfileArea';
-import Grid from '@material-ui/core/Grid';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 
 const styles = theme => makeStyles({
@@ -28,7 +29,6 @@ const styles = theme => makeStyles({
     }
 });
 
-// eslint-disable-next-line react/prop-types
 export const MainContainer = ({ onThemeChange }) => {
     const theme = useTheme();
     const classes = styles(theme)();
@@ -42,4 +42,8 @@ export const MainContainer = ({ onThemeChange }) => {
             </Grid>
         </Grid>
     );
+};
+
+MainContainer.propTypes = {
+    onThemeChange: PropTypes.func
 };
