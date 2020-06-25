@@ -15,9 +15,7 @@ const styles = theme => makeStyles({
 // eslint-disable-next-line react/prop-types
 export const ContentArea = ({ onThemeChange }) => {
     const [checked, setChecked] = useState(false);
-    console.log(checked);
-    const theme = useTheme();
-    const classes = styles(theme)();
+    const classes = styles(useTheme())();
     const handleChange = (v) => {
         setChecked(v.target.checked);
         onThemeChange(v.target.checked ? 'dark' : 'light');
