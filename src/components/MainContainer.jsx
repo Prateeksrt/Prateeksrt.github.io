@@ -7,13 +7,19 @@ import { useTheme, makeStyles } from '@material-ui/core/styles';
 
 const styles = theme => makeStyles({
     profileContainer: {
-        height: '30%',
+        height: '20%',
+        [theme.breakpoints.up('sm')]: {
+            height: '30%',
+        },
         [theme.breakpoints.up('md')]: {
             height: '100%',
         },
     },
     contentContainer: {
-        height: '70%',
+        height: '80%',
+        [theme.breakpoints.up('sm')]: {
+            height: '70%',
+        },
         [theme.breakpoints.up('md')]: {
             height: '100%',
         },
