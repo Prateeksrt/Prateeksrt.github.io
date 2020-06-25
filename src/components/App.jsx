@@ -16,6 +16,9 @@ const createTheme = type => createMuiTheme({
     palette: {
         type: type,
     },
+    typography: {
+        fontFamily: '"Helvetica Neue", "Arial", "sans-serif"',
+    }
 });
 
 const AppBody = () => {

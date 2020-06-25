@@ -7,16 +7,16 @@ import { useTheme, makeStyles } from '@material-ui/core/styles';
 
 const styles = theme => makeStyles({
     profileContainer: {
-        height: '20%',
+        height: '24%',
         [theme.breakpoints.up('sm')]: {
-            height: '30%',
+            height: '29%',
         },
         [theme.breakpoints.up('md')]: {
             height: '100%',
         },
     },
     contentContainer: {
-        height: '80%',
+        height: '75%',
         [theme.breakpoints.up('sm')]: {
             height: '70%',
         },
@@ -39,11 +39,11 @@ export const MainContainer = ({ onThemeChange }) => {
     const theme = useTheme();
     const classes = styles(theme)();
     return (
-        <Grid container item xs={12} md={10} lg={9} xl={8} className={classes.app} direction={'row'} >
-            <Grid item xs={12} md={3} className={classes.profileContainer}>
+        <Grid container item xs={12} md={11} lg={10} xl={9} className={classes.app} direction={'row'} >
+            <Grid item xs={12} md={4} lg={3} className={classes.profileContainer}>
                 <ProfileArea />
             </Grid>
-            <Grid item xs={12} md={9} className={classes.contentContainer}>
+            <Grid item xs={12} md={8} lg={9} className={classes.contentContainer}>
                 <ContentArea onThemeChange={onThemeChange}/>
             </Grid>
         </Grid>
