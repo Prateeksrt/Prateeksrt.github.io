@@ -9,10 +9,10 @@ import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import { AboutMe } from './AboutMe';
 
 const styles = theme => makeStyles({
-    profileAreaContainer: {
+    container: {
         height: '100%',
     },
-    profileItems: {
+    items: {
         width: '100%',
         [theme.breakpoints.up('md')]: {
             height: '35%',
@@ -21,10 +21,10 @@ const styles = theme => makeStyles({
             height: '40%',
         },
     },
-    flexDisplay: {
+    avatarBox: {
         display: 'flex',
     },
-    marginAuto: {
+    contentBox: {
         margin: 'auto',
     },
 });
@@ -32,16 +32,32 @@ const styles = theme => makeStyles({
 const _ProfileArea = ({ width }) => {
     const classes = styles(useTheme())();
     const isMdUp = isWidthUp('md', width);
-    const alignContent = isMdUp ? 'flex-start' : 'center';
-    const avatarContainerClasses = isMdUp ? clsx(classes.profileItems, classes.flexDisplay) : classes.profileItems;
-    const contentContainerClasses = isMdUp ? clsx(classes.profileItems, classes.marginAuto) : classes.profileItems;
-    const justifyContentContainer = isMdUp ? 'flex-end' : 'center';
+
+    const avatarBoxClasses = clsx(classes.items, isMdUp ? classes.avatarBox : '');
+    const contentBoxClasses = clsx(classes.items, isMdUp ? classes.contentBox : '');
+    const contentBoxJustify = isMdUp ? 'flex-end' : 'center';
+    const containerAlignContent = isMdUp ? 'flex-start' : 'center';
+
     return (
-        <Grid container alignContent={alignContent} justify="space-between" className={classes.profileAreaContainer}>
-            <Grid item xs={5} sm={4} md={12} className={avatarContainerClasses}>
+        <Grid
+            container
+            alignContent={containerAlignContent}
+            justify="space-between"
+            className={classes.container}
+        >
+            <Grid
+                item
+                xs={5} sm={4} md={12}
+                className={avatarBoxClasses}
+            >
                 <MyAvatar src={Image} />
             </Grid>
-            <Grid container item xs={7} sm={8} md={12} justify={justifyContentContainer} className={contentContainerClasses}>
+            <Grid
+                container item
+                xs={7} sm={8} md={12}
+                justify={contentBoxJustify}
+                className={contentBoxClasses}
+            >
                 <AboutMe />
             </Grid>
         </Grid>
